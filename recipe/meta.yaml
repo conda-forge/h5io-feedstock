@@ -29,6 +29,8 @@ requirements:
 test:
   imports:
     - h5io
+  commands:
+    - pip check
 
 about:
   home: http://github.com/h5io/h5io
