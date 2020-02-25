@@ -23,12 +23,15 @@ requirements:
     - numpy
   run:
     - python
+    - pip
     - numpy
     - h5py
 
 test:
   imports:
     - h5io
+  commands:
+    - pip check
 
 about:
   home: http://github.com/h5io/h5io
