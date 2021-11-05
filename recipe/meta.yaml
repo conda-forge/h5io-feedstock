@@ -1,6 +1,6 @@
 {% set name = "h5io" %}
-{% set version = "0.1.2" %}
-{% set sha256 = "6400543224c489f1cf487be551f892310fa7060fcd4935b84e515efdc1e1fa43" %}
+{% set version = "0.1.4" %}
+{% set sha256 = "623690ce134522c0b5184d4793c1fe7bd1230308f0a35f77631aa69af81c36ed" %}
 
 package:
   name: {{ name|lower }}
@@ -17,7 +17,7 @@ build:
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
+  host:
     - python
     - pip
     - numpy
