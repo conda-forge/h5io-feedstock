@@ -1,6 +1,6 @@
 {% set name = "h5io" %}
-{% set version = "0.2.2" %}
-{% set sha256 = "46cde79252b1a014e9bbc9c98efc2dd5aac01cc79931ac2226a55837a4bf49b8" %}
+{% set version = "0.2.3" %}
+{% set sha256 = "b536a1cd3b02e82d9ab568618fdb1d1e08642b7327f52e3521167e369e05f509" %}
 
 package:
   name: {{ name|lower }}
