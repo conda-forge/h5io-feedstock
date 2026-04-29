@@ -1,0 +1,61 @@
+schema_version: 1
+
+context:
+  name: h5io
+  version: "0.2.5"
+  sha256: 265bc9c24508b30575e8a8806b19cd4440643ff26f8b82b51d0280444807eed8
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: ${{ sha256 }}
+  file_name: ${{ name }}-${{ version }}.tar.gz
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . --no-deps -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - numpy
+    - setuptools >=64
+    - setuptools_scm >=8
+  run:
+    - python >=${{ python_min }}
+    - pip
+    - numpy
+    - h5py
+
+tests:
+  - python:
+      imports:
+        - h5io
+      pip_check: true
+      python_version: ${{ python_min }}
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+    script:
+      - python -c "import h5io; assert h5io.__version__ == '${{ version }}', h5io.__version__"
+
+about:
+  license: BSD-3-Clause
+  license_file: LICENSE.txt
+  summary: Python Objects Onto HDF5
+  description: |
+    h5io is a package designed to facilitate saving some standard Python objects into the
+    forward-compatible HDF5 format. It is a higher-level package than h5py.
+  homepage: http://github.com/h5io/h5io
+  repository: https://github.com/h5io/h5io
+  documentation: https://github.com/h5io/h5io
+
+extra:
+  recipe-maintainers:
+    - larsoner
+    - jan-janssen
