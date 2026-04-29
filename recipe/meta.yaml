@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -42,7 +42,7 @@ about:
   home: http://github.com/h5io/h5io
   license: BSD-3-Clause
   license_family: BSD
-  license_file: {{ environ["RECIPE_DIR"] }}/LICENSE.txt
+  license_file: LICENSE.txt
   summary: Python Objects Onto HDF5
   description: |
     h5io is a package designed to facilitate saving some standard Python objects into the
