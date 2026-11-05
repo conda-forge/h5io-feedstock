@@ -33,7 +33,9 @@ tests:
       imports:
         - h5io
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - script:
       - python -c "import h5io; assert h5io.__version__ == '${{ version }}', h5io.__version__"
     requirements:
